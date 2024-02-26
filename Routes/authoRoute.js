@@ -11,7 +11,7 @@
  *             schema:
  *               type: array
  *               items:
- *                 $ref: './../Model/teacherSchema.json'
+ *                 $ref: './teacherSchema.json'
  * 
  * */
 const express = require("express");
