@@ -11,7 +11,7 @@
  *             schema:
  *               type: array
  *               items:
- *                 $ref: './../Model/childSchema.json'
+ *                 $ref: './childSchema.json'
  *   post:
  *     description: Insert data into child
  *     responses:
@@ -21,7 +21,7 @@
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './../Model/childSchema.json'
+ *               $ref: './childSchema.json'
  *   put:
  *     description: Update child
  *     responses:
@@ -31,7 +31,7 @@
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './../Model/childSchema.json'
+ *               $ref: './childSchema.json'
  * delete:
  *     description: delete child
  *     responses:
@@ -41,7 +41,7 @@
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './../Model/childSchema.json'
+ *               $ref: './childSchema.json'
  */
 
 const express = require("express");
