@@ -11,7 +11,7 @@
  *             schema:
  *               type: array
  *               items:
- *                 $ref: './../Model/teacherSchema.json'
+ *                 $ref: './teacherSchema.json'
  *   post:
  *     description: Insert data into teacher
  *     responses:
@@ -21,7 +21,7 @@
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './../Model/teacherSchema.json'
+ *               $ref: './teacherSchema.json'
  *   put:
  *     description: Update teacher
  *     responses:
@@ -31,7 +31,7 @@
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './../Model/teacherSchema.json'
+ *               $ref: './teacherSchema.json'
  * delete:
  *     description: delete teacher
  *     responses:
@@ -41,7 +41,7 @@
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './../Model/teacherSchema.json'
+ *               $ref: './teacherSchema.json'
  */
 
 /**
@@ -57,7 +57,7 @@
  *             schema:
  *               type: array
  *               items:
- *                 $ref: './../Model/teacherSchema.json'
+ *                 $ref: './teacherSchema.json'
  * 
  * */
 const express = require("express");
