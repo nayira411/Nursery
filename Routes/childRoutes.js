@@ -1,65 +1,65 @@
 /**
  * @swagger
- * /child:
+ * /class:
  *   get:
- *     description: Returns a list of child
+ *     description: Returns a list of class
  *     responses:
  *       200:
- *         description: A list of child
+ *         description: A list of class
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
- *                 $ref: './childSchema.json'
+ *                 $ref: './classSchema.json'
  *   post:
- *     description: Insert data into child
+ *     description: Insert data into class
  *     responses:
  *       201:
- *         description: Inserted data in child
+ *         description: Inserted data in class
  *         content:
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './childSchema.json'
+ *               $ref: './classSchema.json'
  *   put:
- *     description: Update child
+ *     description: Update class
  *     responses:
  *       200:
- *         description: Updated child
+ *         description: Updated class
  *         content:
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './childSchema.json'
+ *               $ref: './classSchema.json'
  * delete:
- *     description: delete child
+ *     description: delete class
  *     responses:
  *       200:
- *         description: delete child
+ *         description: delete class
  *         content:
  *           application/json:
  *             schema:
  *               type: object
- *               $ref: './childSchema.json'
+ *               $ref: './classSchema.json'
  */
 
 const express = require("express");
-const controller = require("../Controllers/childControllers");
+const controller = require("../Controllers/ClassController.js");
 const { body, param, query } = require("express-validator");
 const { authorize ,CheckLoggedInUser,login} = require("../Controllers/auth.js");
 const router = express.Router();
 
-router.route("/child")
-    .get(authorize,controller.getAllChild)
+router.route("/class")
+    .get(authorize,controller.getallClasses)
     .post(authorize,
         [body("name").isAlpha().withMessage("please enter a valid name")
-        ,body("teacher").isAlphanumeric().withMessage("please enter a valid teacher")
-        ],controller.insertChild)
+        ,body("supervisor").isAlphanumeric().withMessage("please enter a valid supervisor")
+        ,body("children").isInt().withMessage("please enter a valid children")],controller.insertclass)
     .put(authorize,[body("name").isAlpha().withMessage("please enter a valid name")
-        , body("teacher").isAlphanumeric().withMessage("please enter a valid teacher")
-    ], controller.UpdateChild)
-    .delete(authorize,controller.DeletChild)
+    ,body("supervisor").isAlphanumeric().withMessage("please enter a valid supervisor")
+    ,body("children").isInt().withMessage("please enter a valid children")], controller.updateClass)
+    .delete(authorize,controller.deleteClass)
 
    
 
